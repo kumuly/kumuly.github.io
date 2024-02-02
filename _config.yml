@@ -21,10 +21,8 @@
 title: Kumuly
 email: contact@kumuly.dev
 description: >- # this means to ignore newlines until "baseurl:"
-  Creating secure self-custodial Bitcoin products to ensure you "Keep what's yours", 
-  for a world where "All you need is sats". 
-  Join us on our mission to empower everyday living on Bitcoin, 
-  making it accessible, convenient, and integrated into daily life.
+  Creating secure self-custodial Bitcoin products to ensure you "Keep what's yours" in a world where "All you need is sats". 
+  Join us on our mission to empower everyday living on Bitcoin, making it accessible, convenient, and integrated into daily life.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kumulydev
