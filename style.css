@@ -52,7 +52,8 @@
 /*  Google Fonts
 /*----------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inter:300,400,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mulish:300,400,600,700,800&display=swap');
 
 
 /*----------------------------------------*/
@@ -60,7 +61,7 @@
 /*----------------------------------------*/
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #7a7788;
@@ -131,10 +132,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Nunito', sans-serif;
-  color: #151b2c;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
   margin-top: 0px;
   font-weight: 700;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-family: 'Mulish', sans-serif;
+  color: #ffffff;
+  margin-top: 0px;
+  font-weight: 800;
   margin-bottom: 15px;
 }
 
@@ -191,7 +200,7 @@ p {
   font-size: 16px;
   font-weight: normal;
   line-height: 26px;
-  color: #647589;
+  color: #BCC3D2;
   margin-bottom: 15px;
 }
 
@@ -295,7 +304,11 @@ label {
 }
 
 .bg-color {
-  background: #f8f8fe;
+  background: #090909;
+}
+
+.bg-color-2 {
+  background: #151515;
 }
 
 .area-80 {
@@ -458,8 +471,8 @@ div#preloader {
 }
 
 .header_menu ul li a {
-  color: #647589;
-  font-weight: 700;
+  color: #ffffff;
+  font-weight: 500;
   padding: 40px 0;
   display: block;
   font-size: 16px;
@@ -467,7 +480,7 @@ div#preloader {
 }
 
 .header_menu ul li a:hover {
-  color: #017BFF !important;
+  color: #8260ED !important;
 }
 
 .header_menu ul li.menu-item-has-children>a::after {
@@ -508,6 +521,7 @@ div#preloader {
 }
 
 .header_menu ul li ul.submenu li a {
+  color: #707A94;
   padding: 8px 30px;
   font-size: 15px;
   position: relative;
@@ -568,8 +582,7 @@ div#preloader {
   top: 0;
   width: 100%;
   z-index: 999999;
-  box-shadow: 0px 0px 3px #ddd, -2px -2px 3px #ddd;
-  background: #fff;
+  background: #090909;
 }
 
 .header-area.stick .header_menu ul.main-menu>li>a {
@@ -682,12 +695,10 @@ div#preloader {
 }
 
 .title-2 {
-  color: #2a354e;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 68px;
-  margin-bottom: 20px;
-  text-transform: capitalize;
+  font-size: 24px;
+  color: #E2E7F4;
+  margin-bottom: 0px;
+  font-weight: 400;
 }
 
 .layer-1 {
@@ -707,11 +718,15 @@ div#preloader {
 }
 
 .title-1 {
-  font-size: 24px;
-  color: #313d58;
-  padding: 10px 15px;
-  margin-bottom: 0px;
-  font-weight: 600;
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 200;
+  line-height: 68px;
+  margin-bottom: 20px;
+}
+
+.title-1 b {
+  font-weight: 900;
 }
 
 .ready-btn {
@@ -1480,6 +1495,17 @@ div#preloader {
 /*--------------------------------*/
 .feature-area {
   position: relative;
+}
+
+.feature-row {
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-row .col-xl-6, 
+.feature-row .col-lg-6, 
+.feature-row .col-md-6 {
+  padding: unset;
 }
 
 .feature-image {

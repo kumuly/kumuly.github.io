@@ -5,9 +5,7 @@
 .header-area.stick .header-right {
     margin-left: 30px;
 }   
-.title-2 {
-    font-size: 50px;
-}    
+    
 .left-headline h2 {
     font-size: 40px;
 }    
@@ -251,9 +249,7 @@
     margin-right: 80px;
     padding: 15px 0px;
 }
-.mean-container a.meanmenu-reveal {
-    margin-top: -66px;
-}
+
 .mean-container .mean-nav {
     margin-top: 0px;
 }    
@@ -700,7 +696,7 @@
 .flat-content .f-text-down {
     top: 85%;
     left: 15px;
-    color: #028E96;
+    color: #ffffff;
 }    
 .section-headline p {
     width: auto;
