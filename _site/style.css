@@ -147,6 +147,14 @@ h2 {
   margin-bottom: 15px;
 }
 
+.bg-color-neutral-20 h2 {
+  color: #240639;
+}
+
+.bg-color-neutral-20 p {
+  color: #4B5163;
+}
+
 h1 a,
 h2 a,
 h3 a,
@@ -309,6 +317,10 @@ label {
 
 .bg-color-2 {
   background: #151515;
+}
+
+.bg-color-neutral-20 {
+  background: #F2F4FC;
 }
 
 .area-80 {
