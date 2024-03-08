@@ -288,10 +288,34 @@ label {
 }
 
 .section-headline h2 {
-  color: #18233A;
+  color: #ffffff;
   font-size: 46px;
   line-height: 54px;
   text-transform: capitalize;
+}
+
+.section-headline h4 {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: capitalize;
+}
+
+.logo img {
+  max-width: 173px;
+}
+
+.logo h4 {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 800;
+}
+
+.light-headline h2 {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  font-size: 48px;
+  line-height: 68px;
+  font-weight: 200;
 }
 
 .white-headline h2 {
@@ -317,6 +341,10 @@ label {
 
 .bg-color-2 {
   background: #151515;
+}
+
+.bg-color-3 {
+  background: #050506;
 }
 
 .bg-color-neutral-20 {
@@ -857,14 +885,14 @@ div#preloader {
 
 .well-services {
   box-shadow: none;
-  border: 1px solid #F7F7FD;
+  border: 1px solid #E2E7F4;
   z-index: 1;
   background: #fff;
   text-align: center;
   padding: 40px 30px;
   position: relative;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 32px;
   margin-bottom: 30px;
   position: relative;
 }
@@ -882,33 +910,6 @@ div#preloader {
   position: relative;
 }
 
-.icon-img::after {
-  position: absolute;
-  content: "";
-  left: 0px;
-  top: 0px;
-  background: #017BFF;
-  width: 50px;
-  height: 50px;
-  opacity: 0.8;
-  border-radius: 50%;
-  transition: 0.5s;
-}
-
-.well-services::before {
-  position: absolute;
-  left: 100%;
-  top: 100%;
-  width: 100%;
-  height: 100%;
-  background: #017BFF;
-  z-index: -1;
-  opacity: 0;
-  transition: 0.4s;
-  content: "";
-  transform: rotate(45deg);
-}
-
 .wel-content h4 {
   display: inline-block;
   font-size: 24px;
@@ -918,6 +919,11 @@ div#preloader {
 
 .wel-content p {
   margin-bottom: 0px;
+  color: #707A94;
+}
+
+.wel-content h4 {
+  color: #240639;
 }
 
 .well-services:hover::before {

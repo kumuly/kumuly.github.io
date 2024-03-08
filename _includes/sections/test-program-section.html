@@ -1,0 +1,31 @@
+{% if page.url == '/test-program' %}
+    {% assign classes = 'bg-color-xs ' %}
+{% else %}
+    {% assign classes = 'bg-color'%}
+{% endif %}
+
+<!-- start test program area -->
+<div class="fix bg-color-3">
+    <div class="container">
+        <div class="row" style="justify-content: center;">
+            <img src="{{'/assets/img/project/kumuly-pocket-home.png' | relative_url }}" alt="" style="width: 880px !important;">
+        </div>
+        </br>
+        <div class="text-center logo">
+            <img src="assets/img/logo/kumuly-pocket.png" alt="Kumuly Pocket Logo">
+        </div>
+    </div>
+</div>
+<div class="fix bg-color-3 area-padding-2 {{classes}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="light-headline text-center">
+                    <h2>Interested in testing it out?</h2>
+                    <p>Follow us on our mission to empower everyday living on Bitcoin, making it accessible, convenient, and integrated into daily life.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End test program area -->
