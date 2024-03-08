@@ -78,6 +78,10 @@ img {
   overflow: hidden
 }
 
+.no-padding {
+  padding: 0px;
+}
+
 a,
 .button {
   -webkit-transition: all 0.3s ease-out 0s;
@@ -287,6 +291,14 @@ label {
   padding: 80px 0px;
 }
 
+.area-padding-4 {
+  padding: 40px 0px 128px
+}
+
+.area-padding-5 {
+  padding: 64px 0px 104px;
+}
+
 .section-headline h2 {
   color: #ffffff;
   font-size: 46px;
@@ -305,9 +317,8 @@ label {
   max-width: 173px;
 }
 
-.logo h4 {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 800;
+.twitter-logo img {
+  max-height: 88px;
 }
 
 .light-headline h2 {
@@ -1515,9 +1526,8 @@ div#preloader {
   position: relative;
 }
 
-.feature-row {
+.feature-area .row {
   align-items: center;
-  justify-content: center;
 }
 
 .feature-row .col-xl-6, 
