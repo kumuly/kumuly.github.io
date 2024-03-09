@@ -22,7 +22,7 @@ a.meanmenu-reveal {
   z-index: 99;
 }
 .mean-container a.meanmenu-reveal {
-    color: #028E96;
+    color: #FFFFFF;
     cursor: pointer;
     display: block;
     font-family: Arial,Helvetica,sans-serif;
@@ -40,7 +40,7 @@ a.meanmenu-reveal {
     font-size: 28px !important;
 }
 .mean-container a.meanmenu-reveal span {
-    background: #028E96;
+    background: #FFFFFF;
     display: block;
     height: 2px;
     margin-top: 7px;
@@ -49,7 +49,7 @@ a.meanmenu-reveal {
 }
 
 .mean-container .mean-nav {
-	background: #0A0653 ;
+	background: #090909;
 	float: left;
 	width: 100%;
 }
@@ -138,7 +138,7 @@ a.meanmenu-reveal {
 }
 
 .mean-container .mean-nav ul li a.mean-expand:hover {
-	background:#028E96;
+	background:#FFFFFF;
 }
 
 .mean-container .mean-push {

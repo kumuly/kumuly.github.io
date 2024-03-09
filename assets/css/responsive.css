@@ -65,11 +65,11 @@
 .hd-btn {
     padding: 0 15px;
 }  
-.title-2 {
+.title-1 {
     font-size: 40px;
     line-height: 52px;
 }    
-.title-1 {
+.title-2 {
     font-size: 22px;
     padding: 15px 6px;
 }    
@@ -183,7 +183,7 @@
     font-size: 34px;
     line-height: 42px;
 }    
-.intro-area-4 .title-1 {
+.intro-area-4 .title-2 {
     font-size: 20px;
 } 
 .high-text span img {
@@ -266,13 +266,12 @@
     min-height: 560px;
     object-fit: cover;
 }
-.title-1 {
+.title-2 {
     font-size: 20px;
     padding: 0px 0px;
     line-height: 28px;
 }    
-.title-2 {
-    color: #2a354e;
+.title-1 {
     font-size: 30px;
     line-height: 38px;
 }    
@@ -447,7 +446,7 @@
     font-size: 30px;
     line-height: 40px;
 }    
-.intro-area-4 .title-1 {
+.intro-area-4 .title-2 {
     font-size: 18px;
 }    
 .intro-area-4 .slide-images {
@@ -647,14 +646,13 @@
     min-height: 660px;
     object-fit: cover;
 }
-.title-1 {
+.title-2 {
     font-size: 20px;
-    color: #313d58;
     padding: 0px;
     margin-bottom: 0px;
     line-height: 28px;
 }
-.title-2 {
+.title-1 {
     font-size: 24px;
     line-height: 38px;
 }
@@ -815,7 +813,7 @@
     margin: 0px auto 20px;
     font-size: 26px;
 }    
-.intro-area-3 .title-1 {
+.intro-area-3 .title-2 {
     font-size: 17px;
 }    
 .intro-area-3,    
@@ -870,10 +868,10 @@
     margin-top: 20px;
     text-align: center;
 }   
-.intro-area-4 .title-1 {
+.intro-area-4 .title-2 {
     font-size: 17px;
 }    
-.intro-area-4 .title-2 {
+.intro-area-4 .title-1 {
     font-size: 27px;
     line-height: 42px;
 }    
