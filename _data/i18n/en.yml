@@ -1,0 +1,113 @@
+# English translations
+lang: en
+lang_name: English
+
+# Navigation
+nav:
+  pocket_app: "Pocket App"
+  news: "News"
+  merch: "Merch"
+  bounties: "Bounties"
+  about_kumuly: "About Kumuly"
+  reach_out: "Reach out"
+
+# Common
+common:
+  search: "Search..."
+  about: "About"
+  terms: "Terms & Condition"
+  privacy: "Privacy"
+  information: "Information"
+  email: "Email"
+  location: "Location"
+  copyright: "© {year} Kumuly B.V. All rights reserved."
+
+# Intro section
+intro:
+  title: "Living and holding shop on Bitcoin is made easy with <b>Kumuly Pocket</b>"
+  subtitle: "Integrate Bitcoin in your daily life and business"
+
+# Footer
+footer:
+  description: "Creating secure self-custodial Bitcoin products to ensure you can keep what's yours in a world where all you need is sats."
+
+# Bounties section
+bounties:
+  page_title: "Bounties & Education"
+  title: "Empowering LATAM Developers to Build on Bitcoin"
+  subtitle: "A technical pathway in Spanish from Bitcoin basics to Lightning protocol contributions, with courses and bounties that connect learning to real-world contributions."
+  problem_title: "The Problem"
+  problem_text_1: "600M people speak Spanish, with 486M native speakers. Only Argentina scores high in English proficiency—most LATAM countries are moderate to low."
+  problem_text_2: "Many developers lack confidence to dive into Bitcoin/Lightning development. They grasp concepts better in their mother tongue with cultural context. Bitcoin introduces concepts different from LATAM's governmental and economic structures, making it harder to even try."
+  problem_text_3: "<strong>LATAM has amazing developers, but there's no pathway to understand Bitcoin/Lightning at a protocol level.</strong> They're forced to piece together knowledge from English sources and poor translations."
+  solution_title: "The Solution"
+  solution_text: "Technical pathway in Spanish from Bitcoin basics to Lightning/Nostr contributions. <strong>Not translations</strong>—original content with LATAM examples and cultural context."
+  solution_technical_title: "Technical Content"
+  solution_technical_text: "Bitcoin protocol, consensus, Lightning architecture, BOLTs and NIPs with examples and workshops."
+  solution_projects_title: "Real-World Projects"
+  solution_projects_text: "Build a wallet supporting Bitcoin and Lightning to understand problems and limitations firsthand."
+  solution_cultural_title: "Cultural Context"
+  solution_cultural_text: "Philosophy and use cases impacting LATAM: remittances, inflation, and why developers in Colombia or Argentina should care."
+  solution_contribution_title: "From Zero to Contribution"
+  solution_contribution_text: "Git basics, reading codebases, finding good first issues, and contributing to open source Bitcoin projects."
+  platform_title: "Bounties Platform"
+  platform_text: "At <strong>bounties.kumuly.dev</strong>, students earn Bitcoin for contributions, connecting LATAM developers with real issues and companies."
+  platform_earn_title: "Earn Bitcoin for Contributions"
+  platform_earn_text: "Each bounty includes video explanations in Spanish and problem-solving deep dives. Earn meaningful Bitcoin rewards for real-world contributions."
+  platform_connection_title: "Direct Connection"
+  platform_connection_text: "Connect directly with open source issues and companies seeking Bitcoin/Lightning talent."
+  platform_video_title: "Video & Text Explanations"
+  platform_video_text: "Mini explanations in video and text format clarify expectations, making it easier to get started."
+  platform_sponsors_title: "Company Sponsorships"
+  platform_sponsors_text: "Companies sponsor bounties to grow the Bitcoin ecosystem while finding talented developers."
+  courses_title: "Courses & Bounties: Learning by Doing"
+  courses_text: "Courses provide foundational knowledge. Bounties let you apply it in real scenarios. As you progress, find bounties matching your skill level."
+  courses_learn_title: "Learn Fundamentals"
+  courses_learn_text: "Start with Bitcoin basics: protocol, consensus mechanisms, and core concepts."
+  courses_practice_title: "Practice with Bounties"
+  courses_practice_text: "Apply knowledge on real issues, earning Bitcoin while contributing to open source."
+  courses_portfolio_title: "Build Your Portfolio"
+  courses_portfolio_text: "Showcase contributions and connect with companies seeking Bitcoin/Lightning developers."
+  future_title: "Beyond Bitcoin: Nostr Protocol"
+  future_text_1: "Nostr will be added to show it's not only sound money, but owning your digital identity. With social media, marketplaces, and more, Nostr represents another protocol where developers can contribute."
+  future_text_2: "<strong>We hope LATAM developers seeking freedom can see Bitcoin/Lightning development as an alternative to being absorbed by big corps.</strong>"
+  cta_title: "Join the Journey"
+  cta_text: "We're learning alongside the community as we build this together. Stay tuned for updates on courses, bounties, and contribution opportunities."
+  cta_button: "Visit Bounties Platform"
+
+# Feature section
+feature:
+  transfer_title: "Transfering sats is as easy and fast as sending a message"
+  contacts_title: "Contacts list"
+  contacts_text: "Simplify your transactions by adding contacts to your wallet. No more hassles of asking or passing Bitcoin invoices around to send or receive funds."
+  request_title: "Request & pay"
+  request_text: "Request your contacts to pay you and pay their requests instantly, all through the contacts list."
+  promos_title: "Unlock fantastic promos and deals using your sats!"
+  promos_subtitle: "In Kumuly Pocket you'll find a diverse range of available promotions, including electronics, food, travel, clothing and more."
+  promos_filter_title: "Just the promos you're into"
+  promos_filter_text: "Find great promos filtered by your preferences, including distance, categories, brands, price and more. Get exactly what you're looking for, every time."
+  services_title: "Enjoy a variety of services and utilities to spend sats."
+  services_text: "Personalize your app with the services you most frequently spend bitcoin on. Including entertainment, transportation, subscriptions, deals, bill payments and more."
+  merchants_title: "Discover Bitcoin-accepting merchants"
+  merchants_text: "When you spend sats in Kumuly Pocket you contribute to the Bitcoin circular economy and automatically help to keep BTC Map populated for your fellow Bitcoiners."
+
+# Test program section
+test_program:
+  title: "Interested in testing it out?"
+  text: "Follow us on our mission to empower everyday living on Bitcoin, making it accessible, convenient, and integrated into daily life. Stay tuned for updates!"
+
+# Services
+services:
+  self_custody:
+    title: "Self-Custody"
+    description: "Keep control of your funds and data. Your sats are really yours and we don't collect nor sell your data."
+  instant_payments:
+    title: "Instant Payments"
+    description: "A seamless Bitcoin and Lightning Network experience lets you enjoy instant payments and optimise fees."
+  free_open_source:
+    title: "Free Open Source"
+    description: "Our code is free and open source so more people can benefit from it without needing us or our permission."
+  service_providers:
+    title: "Service Providers"
+    description: "Use LSP's to make your life easier or connect and manage everything yourself. The choice is yours."
+
