@@ -18,6 +18,12 @@ keywords: "kumuly, bitcoin, lightning network, financial technology, payments, f
 twitter: https://x.com/kumulydev
 github: https://github.com/kumuly
 
+# Internationalization
+lang: en # default language
+languages: ["en", "es"]
+default_lang: en
+exclude_from_localization: ["assets", "images", "js", "css"]
+
 # Build settings
 markdown: kramdown
 theme: minima
