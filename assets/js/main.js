@@ -251,7 +251,6 @@ $.scrollUp({
 		}
 		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 	}
-	
 	$('.counter').counterUp({
 		
 		delay: 10,
