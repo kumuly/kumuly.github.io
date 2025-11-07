@@ -1,0 +1,175 @@
+{% comment %}
+  Language switcher component
+  Usage: {% include language-switcher.html %}
+{% endcomment %}
+
+{% comment %} Get current language {% endcomment %}
+{% include i18n.html %}
+{% assign current_lang = current_lang | default: site.default_lang | default: 'en' %}
+
+{% comment %} Get current page path without language prefix {% endcomment %}
+{% assign current_path = page.url %}
+{% if current_path == '/es' or current_path == '/es/' %}
+  {% assign current_path = '/' %}
+{% elsif current_path contains '/es/' %}
+  {% assign current_path = current_path | remove_first: '/es' %}
+{% elsif current_path == '/en' or current_path == '/en/' %}
+  {% assign current_path = '/' %}
+{% elsif current_path contains '/en/' %}
+  {% assign current_path = current_path | remove_first: '/en' %}
+{% endif %}
+{% if current_path == '' %}
+  {% assign current_path = '/' %}
+{% endif %}
+
+<div class="language-switcher">
+  <ul class="main-menu">
+    <li class="menu-item-has-children">
+      <a href="#" class="lang-toggle">
+        {% if current_lang == 'en' %}
+          🇬🇧 EN
+        {% else %}
+          🇪🇸 ES
+        {% endif %}
+      </a>
+      <ul class="submenu lang-submenu">
+        {% if current_lang != 'en' %}
+          <li>
+            {% if current_path == '/' %}
+              <a href="{{ '/' | relative_url }}">
+            {% else %}
+              <a href="{{ current_path | relative_url }}">
+            {% endif %}
+              🇬🇧 EN
+            </a>
+          </li>
+        {% endif %}
+        {% if current_lang != 'es' %}
+          <li>
+            <a href="{{ '/es' | append: current_path | relative_url }}">
+              🇪🇸 ES
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<style>
+  .language-switcher {
+    display: inline-block;
+    margin-left: 30px;
+    vertical-align: middle;
+    position: relative;
+  }
+  .language-switcher .main-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .language-switcher .main-menu li {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+  }
+  .language-switcher .main-menu li a {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 40px 0;
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .language-switcher .main-menu li a:hover {
+    color: #8260ED !important;
+  }
+  .language-switcher .main-menu li.menu-item-has-children > a::after {
+    content: '\e64b';
+    font-family: 'themify';
+    font-weight: 700;
+    margin-left: 5px;
+    font-size: 10px;
+  }
+  .language-switcher .submenu {
+    position: absolute;
+    background: #090909 !important;
+    background-color: #090909 !important;
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    top: 110%;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px 0;
+    transition: all 0.3s ease-out 0s;
+    border-top: 2px solid #8260ED;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+    z-index: 99;
+    text-align: left;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0 0 4px 4px;
+  }
+  .language-switcher .submenu li {
+    margin: 0;
+    display: block;
+  }
+  .language-switcher .submenu li a {
+    color: #ffffff !important;
+    padding: 8px 15px;
+    font-size: 15px;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .language-switcher .submenu li a:hover {
+    color: #8260ED;
+  }
+  .language-switcher .submenu li a::after {
+    position: absolute;
+    content: "\e628";
+    left: 50%;
+    top: 9px;
+    font-family: themify;
+    font-size: 14px;
+    color: #8260ED;
+    opacity: 0;
+    transition: 0.5s;
+    font-weight: 700;
+  }
+  .language-switcher .submenu li a:hover::after {
+    left: 90%;
+    opacity: 1;
+    transition: 0.5s;
+  }
+  .language-switcher .main-menu li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    top: 96%;
+  }
+  .language-switcher .submenu li:hover > a {
+    color: #8260ED;
+  }
+  
+  /* Sticky header styles */
+  .header-area.stick .language-switcher .main-menu li a {
+    padding: 30px 0px;
+  }
+  
+  /* Mobile styles - hide desktop language switcher on mobile */
+  @media (max-width: 991px) {
+    .language-switcher {
+      display: none;
+    }
+  }
+</style>
+

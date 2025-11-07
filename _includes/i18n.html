@@ -1,0 +1,26 @@
+{% comment %}
+  i18n helper include
+  Usage: {% include i18n.html %}
+  
+  This sets up the current language and translation data
+  Language is determined by:
+  1. page.lang (if set in front matter)
+  2. URL path (/es/ or /en/)
+  3. site.default_lang (fallback)
+{% endcomment %}
+
+{% comment %} Detect language from URL or page {% endcomment %}
+{% assign current_lang = page.lang | default: site.default_lang | default: 'en' %}
+{% if page.url contains '/es/' or page.url == '/es' or page.url == '/es/' %}
+  {% assign current_lang = 'es' %}
+{% elsif page.url contains '/en/' or page.url == '/en' or page.url == '/en/' %}
+  {% assign current_lang = 'en' %}
+{% endif %}
+
+{% comment %} Load translations for current language {% endcomment %}
+{% assign t = site.data.i18n[current_lang] %}
+{% unless t %}
+  {% assign t = site.data.i18n.en %}
+  {% assign current_lang = 'en' %}
+{% endunless %}
+
