@@ -1,3 +1,5 @@
+{% include i18n.html %}
+{% assign t = t | default: site.data.i18n.en %}
 <div class="intro-content">
     <div class="slider-content">
         <div class="container">
@@ -6,12 +8,12 @@
                     <div class="slide-all-text">
                         <!-- layer 1 -->
                         <div class="layer-1 wow fadeInUp" data-wow-delay="0.3s">
-                            <h2 class="title-1">Living and holding shop on Bitcoin is made easy with <b>Kumuly Pocket</b></h2>
+                            <h2 class="title-1">{{ t.intro.title }}</h2>
                         </div>
 
                         <!-- layer 2 -->
                         <div class="layer-2 wow fadeInUp" data-wow-delay="0.3s">
-                            <h4 class="title-2">Integrate Bitcoin in your daily life and business<!-- today --></h4>
+                            <h4 class="title-2">{{ t.intro.subtitle }}</h4>
                         </div>
                     </div>
                 </div>

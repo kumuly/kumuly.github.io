@@ -1,3 +1,5 @@
+{% include i18n.html %}
+{% assign t = t | default: site.data.i18n.en %}
 <!-- Start Feature Area -->
 <div class="feature-area fix bg-color area-padding">
     <div class="container">
@@ -12,20 +14,20 @@
             <div class="col-xl-6 col-lg-6 col-md-6 order-xl-2 order-lg-2 order-md-2 order-1">
                 <div class="feature-all">
                     <div class="right-headline">
-                        <h2>Transfering sats is as easy and fast as sending a message</h2>
+                        <h2>{% if t and t.feature %}{{ t.feature.transfer_title }}{% else %}Transfering sats is as easy and fast as sending a message{% endif %}</h2>
                     </div>
                     <!-- about single -->
                     <div class="support-services wow fadeInUp" data-wow-delay="0.3s">
                         <div>
-                            <h4>Contacts list</h4>
-                            <p>Simplify your transactions by adding contacts to your wallet. No more hassles of asking or passing Bitcoin invoices around to send or receive funds.</p>
+                            <h4>{% if t and t.feature %}{{ t.feature.contacts_title }}{% else %}Contacts list{% endif %}</h4>
+                            <p>{% if t and t.feature %}{{ t.feature.contacts_text }}{% else %}Simplify your transactions by adding contacts to your wallet. No more hassles of asking or passing Bitcoin invoices around to send or receive funds.{% endif %}</p>
                         </div>
                     </div>
                     <!-- about single -->
                     <div class="support-services wow fadeInUp" data-wow-delay="0.7s">
                         <div>
-                            <h4>Request & pay</h4>
-                            <p>Request your contacts to pay you and pay their requests instantly, all through the contacts list.</p>
+                            <h4>{% if t and t.feature %}{{ t.feature.request_title }}{% else %}Request & pay{% endif %}</h4>
+                            <p>{% if t and t.feature %}{{ t.feature.request_text }}{% else %}Request your contacts to pay you and pay their requests instantly, all through the contacts list.{% endif %}</p>
                         </div>
                     </div>
                     <!-- about single -->
@@ -43,14 +45,14 @@
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="feature-all">
                     <div class="right-headline">
-                        <h2>Unlock fantastic promos and deals using your sats!</h2>
-                        <p>In Kumuly Pocket you'll find a diverse range of available promotions, including electronics, food, travel, clothing and more.</p>
+                        <h2>{% if t and t.feature %}{{ t.feature.promos_title }}{% else %}Unlock fantastic promos and deals using your sats!{% endif %}</h2>
+                        <p>{% if t and t.feature %}{{ t.feature.promos_subtitle }}{% else %}In Kumuly Pocket you'll find a diverse range of available promotions, including electronics, food, travel, clothing and more.{% endif %}</p>
                     </div>
                     <!-- about single -->
                     <div class="support-services wow fadeInUp" data-wow-delay="0.3s">
                         <div>
-                            <h4>Just the promos you're into</h4>
-                            <p>Find great promos filtered by your preferences, including distance, categories, brands, price and more. Get exactly what you're looking for, every time.</p>
+                            <h4>{% if t and t.feature %}{{ t.feature.promos_filter_title }}{% else %}Just the promos you're into{% endif %}</h4>
+                            <p>{% if t and t.feature %}{{ t.feature.promos_filter_text }}{% else %}Find great promos filtered by your preferences, including distance, categories, brands, price and more. Get exactly what you're looking for, every time.{% endif %}</p>
                         </div>
                     </div>
                     <!-- about single -->
@@ -82,10 +84,10 @@
                 <div class="feature-all">
                     <div class="right-headline text-center">
                         <h2>
-                            Enjoy a variety of services and utilities to spend sats.
+                            {% if t and t.feature %}{{ t.feature.services_title }}{% else %}Enjoy a variety of services and utilities to spend sats.{% endif %}
                         </h2>
                         <p>
-                            Personalize your app with the services you most frequently spend bitcoin on. Including entertainment, transportation, subscriptions, deals, bill payments and more.
+                            {% if t and t.feature %}{{ t.feature.services_text }}{% else %}Personalize your app with the services you most frequently spend bitcoin on. Including entertainment, transportation, subscriptions, deals, bill payments and more.{% endif %}
                         </p>
                     </div>
                     <!-- about single -->
@@ -123,8 +125,8 @@
             <div class="col-xl-6 col-lg-6 col-md-6 order-xl-2 order-lg-2 order-md-2 order-1">
                 <div class="feature-all">
                     <div class="right-headline">
-                        <h2>Discover Bitcoin-accepting merchants</h2>
-                        <p>When you spend sats in Kumuly Pocket you contribute to the Bitcoin circular economy and automatically help to keep BTC Map populated for your fellow Bitcoiners.</p>
+                        <h2>{% if t and t.feature %}{{ t.feature.merchants_title }}{% else %}Discover Bitcoin-accepting merchants{% endif %}</h2>
+                        <p>{% if t and t.feature %}{{ t.feature.merchants_text }}{% else %}When you spend sats in Kumuly Pocket you contribute to the Bitcoin circular economy and automatically help to keep BTC Map populated for your fellow Bitcoiners.{% endif %}</p>
                     </div>
                     <!-- about single -->
                 </div>
