@@ -1,5 +1,6 @@
 (function ($) {
   "use strict";
+  
       
       
   
@@ -218,16 +219,23 @@
     });
 
     // search 
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('results-container'),
-      json: '/search.json',
-      searchResultTemplate: '<div class="search-results"><a class="gh-search-item" href="{url}"><h5 class="search-post-title">{title}</h5></a>'
-    });
+    var searchInput = document.getElementById('search-input');
+    var resultsContainer = document.getElementById('results-container');
+    if (searchInput && resultsContainer) {
+      var sjs = SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: resultsContainer,
+        json: '/search.json',
+        searchResultTemplate: '<div class="search-results"><a class="gh-search-item" href="{url}"><h5 class="search-post-title">{title}</h5></a>'
+      });
+    }
 
-    document.querySelector('.main-search').addEventListener('click', function(e){
-      e.preventDefault();
-    });
+    var mainSearch = document.querySelector('.main-search');
+    if (mainSearch) {
+      mainSearch.addEventListener('click', function(e){
+        e.preventDefault();
+      });
+    }
 
     jQuery('.service-tab .nav-link').on('click', function(e){
       e.preventDefault();

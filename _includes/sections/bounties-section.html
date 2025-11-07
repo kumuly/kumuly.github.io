@@ -223,15 +223,273 @@
                     <div class="right-headline text-center">
                         <h2>{{ t.bounties.cta_title }}</h2>
                         <p>{{ t.bounties.cta_text }}</p>
-                        <div style="margin-top: 40px;">
-                            <a href="https://bounties.kumuly.dev" target="_blank" rel="noopener noreferrer" class="ready-btn anti-btn" style="padding: 13px 30px; font-size: 18px;">
-                                {{ t.bounties.cta_button }}
-                            </a>
-                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 40px;">
+            <div class="col-xl-8 col-lg-10 col-md-12">
+                <div class="contact-form" style="background: #fff; padding: 50px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <h3 class="text-center" style="margin-bottom: 40px; color: #240639; font-weight: 700;">{{ t.bounties.feedback_title }}</h3>
+                    <form id="studentFeedbackForm" class="contact-form">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12" style="margin-bottom: 25px;">
+                                <label for="email" style="display: block; margin-bottom: 8px; color: #4B5163; font-size: 14px; font-weight: 600;">{{ t.bounties.feedback_email_label }}</label>
+                                <input type="email" name="email" id="email" class="form-control email" placeholder="{{ t.bounties.feedback_email_placeholder }}" required
+                                    data-error="Please enter your email" style="border: 1px solid #EDF9FF; border-radius: 8px; height: 54px; padding: 15px 20px; font-size: 14px; color: #273048; background: #fff; transition: all 0.3s;">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12" style="margin-bottom: 25px;">
+                                <label for="opinion" style="display: block; margin-bottom: 8px; color: #4B5163; font-size: 14px; font-weight: 600;">{{ t.bounties.feedback_opinion_label }}</label>
+                                <textarea name="opinion" id="opinion" rows="6" class="form-control" placeholder="{{ t.bounties.feedback_opinion_placeholder }}" required
+                                    data-error="Please enter your opinion" style="border: 1px solid #EDF9FF; border-radius: 8px; padding: 15px 20px; font-size: 14px; color: #273048; background: #fff; min-height: 120px; resize: vertical; transition: all 0.3s;"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12" style="margin-bottom: 25px;">
+                                <label for="hours_per_week" style="display: block; margin-bottom: 8px; color: #4B5163; font-size: 14px; font-weight: 600;">{{ t.bounties.feedback_hours_label }}</label>
+                                <select name="hours_per_week" id="hours_per_week" class="form-control" required
+                                    data-error="Please select hours" style="border: 1px solid #EDF9FF; border-radius: 8px; height: 54px; padding: 15px 20px; font-size: 14px; color: #273048; background: #fff; cursor: pointer; transition: all 0.3s;">
+                                    <option value="">{{ t.bounties.feedback_hours_select }}</option>
+                                    <option value="1-3">{{ t.bounties.feedback_hours_1_3 }}</option>
+                                    <option value="4-6">{{ t.bounties.feedback_hours_4_6 }}</option>
+                                    <option value="7-10">{{ t.bounties.feedback_hours_7_10 }}</option>
+                                    <option value="11-15">{{ t.bounties.feedback_hours_11_15 }}</option>
+                                    <option value="16+">{{ t.bounties.feedback_hours_16_plus }}</option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12" style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 12px; color: #4B5163; font-size: 14px; font-weight: 600;">{{ t.bounties.feedback_interested_label }}</label>
+                                <div style="display: flex; gap: 25px; align-items: center; flex-wrap: wrap;">
+                                    <label style="font-weight: normal; cursor: pointer; margin: 0; color: #4B5163; font-size: 14px; display: flex; align-items: center;">
+                                        <input type="radio" name="interested" value="Yes" required style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer; accent-color: #8260ED;">
+                                        {{ t.bounties.feedback_interested_yes }}
+                                    </label>
+                                    <label style="font-weight: normal; cursor: pointer; margin: 0; color: #4B5163; font-size: 14px; display: flex; align-items: center;">
+                                        <input type="radio" name="interested" value="No" required style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer; accent-color: #8260ED;">
+                                        {{ t.bounties.feedback_interested_no }}
+                                    </label>
+                                    <label style="font-weight: normal; cursor: pointer; margin: 0; color: #4B5163; font-size: 14px; display: flex; align-items: center;">
+                                        <input type="radio" name="interested" value="Maybe" required style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer; accent-color: #8260ED;">
+                                        {{ t.bounties.feedback_interested_maybe }}
+                                    </label>
+                                </div>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12" style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 12px; color: #4B5163; font-size: 14px; font-weight: 600;">{{ t.bounties.feedback_solving_issues_label }}</label>
+                                <div style="display: flex; gap: 25px; align-items: center; flex-wrap: wrap;">
+                                    <label style="font-weight: normal; cursor: pointer; margin: 0; color: #4B5163; font-size: 14px; display: flex; align-items: center;">
+                                        <input type="radio" name="solving_issues" value="Yes" required style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer; accent-color: #8260ED;">
+                                        {{ t.bounties.feedback_interested_yes }}
+                                    </label>
+                                    <label style="font-weight: normal; cursor: pointer; margin: 0; color: #4B5163; font-size: 14px; display: flex; align-items: center;">
+                                        <input type="radio" name="solving_issues" value="No" required style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer; accent-color: #8260ED;">
+                                        {{ t.bounties.feedback_interested_no }}
+                                    </label>
+                                </div>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12" style="margin-bottom: 30px;">
+                                <label style="display: block; margin-bottom: 12px; color: #4B5163; font-size: 14px; font-weight: 600;">{{ t.bounties.feedback_additional_interests }}</label>
+                                <div style="margin-top: 8px;">
+                                    <label style="font-weight: normal; cursor: pointer; margin: 0; color: #4B5163; font-size: 14px; display: flex; align-items: center; margin-bottom: 12px;">
+                                        <input type="checkbox" name="bitcoin_payment" value="Yes" style="margin-right: 10px; width: 18px; height: 18px; cursor: pointer; accent-color: #8260ED;">
+                                        {{ t.bounties.feedback_bitcoin_payment }}
+                                    </label>
+                                    <label style="font-weight: normal; cursor: pointer; margin: 0; color: #4B5163; font-size: 14px; display: flex; align-items: center;">
+                                        <input type="checkbox" name="company_connections" value="Yes" style="margin-right: 10px; width: 18px; height: 18px; cursor: pointer; accent-color: #8260ED;">
+                                        {{ t.bounties.feedback_company_connections }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12" style="text-align: center;">
+                                <button type="submit" id="submitFeedback" class="contact-btn" style="border-radius: 8px; font-weight: 600; letter-spacing: 0.5px; background: #240639; border-color: #240639; color: #fff; padding: 14px 40px; font-size: 16px;">
+                                    {{ t.bounties.feedback_submit_button }}
+                                </button>
+                                <div id="feedbackSubmitMsg" class="text-center hidden" style="margin-top: 20px; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500; line-height: 24px; padding: 15px 20px; border-radius: 8px;"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- End Call to Action Section -->
+
+<style>
+/* Feedback Form Styling */
+#studentFeedbackForm input[type="email"]:focus,
+#studentFeedbackForm textarea:focus,
+#studentFeedbackForm select:focus {
+    border-color: #8260ED !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(130, 96, 237, 0.1);
+}
+
+#studentFeedbackForm input[type="email"]:hover,
+#studentFeedbackForm textarea:hover,
+#studentFeedbackForm select:hover {
+    border-color: #8260ED;
+}
+
+#studentFeedbackForm select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234B5163' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    padding-right: 50px;
+}
+
+#studentFeedbackForm input[type="radio"]:checked,
+#studentFeedbackForm input[type="checkbox"]:checked {
+    accent-color: #8260ED;
+}
+
+#studentFeedbackForm .contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(36, 6, 57, 0.3);
+    background: #3a0f5a !important;
+    border-color: #3a0f5a !important;
+}
+</style>
+
+<script>
+// Form submission handler
+(function() {
+    var isSubmitting = false;
+    var scriptURL = "https://script.google.com/macros/s/AKfycbwmdGjonAnF_EcWwIfdYxfpdKbHcS8WTThbKNunV-919VrDEEOht_8zuM6017LNc-duOA/exec";
+    
+    // Get i18n messages from the page
+    var messages = {
+        success: "{{ t.bounties.feedback_success }}",
+        error: "{{ t.bounties.feedback_error }}",
+        validation_error: "{{ t.bounties.feedback_validation_error }}",
+        submitting: "{{ t.bounties.feedback_submitting }}"
+    };
+    
+    function attachFormHandler() {
+        var form = document.getElementById('studentFeedbackForm');
+        var button = document.getElementById('submitFeedback');
+        
+        if (form && button) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                if (!isSubmitting) {
+                    handleFormSubmit();
+                }
+            });
+            return true;
+        }
+        return false;
+    }
+    
+    function handleFormSubmit() {
+        if (isSubmitting) return;
+        
+        isSubmitting = true;
+        
+        // Get form values
+        var emailInput = document.getElementById('email');
+        var email = emailInput ? emailInput.value.trim() : '';
+        var opinion = document.getElementById('opinion').value.trim();
+        var hours_per_week = document.getElementById('hours_per_week').value;
+        var interested = document.querySelector('input[name="interested"]:checked');
+        var solving_issues = document.querySelector('input[name="solving_issues"]:checked');
+        var bitcoin_payment = document.querySelector('input[name="bitcoin_payment"]:checked');
+        var company_connections = document.querySelector('input[name="company_connections"]:checked');
+        
+        interested = interested ? interested.value : '';
+        solving_issues = solving_issues ? solving_issues.value : '';
+        bitcoin_payment = bitcoin_payment ? bitcoin_payment.value : 'No';
+        company_connections = company_connections ? company_connections.value : 'No';
+        
+        // Validate required fields
+        if (!email || !opinion || !hours_per_week || !interested || !solving_issues) {
+            showMessage(false, messages.validation_error);
+            isSubmitting = false;
+            return;
+        }
+        
+        var button = document.getElementById('submitFeedback');
+        var originalButtonText = button.textContent;
+        button.disabled = true;
+        button.textContent = messages.submitting;
+        
+        // Prepare form data - email is included here
+        var formData = new URLSearchParams({
+            email: email,
+            opinion: opinion,
+            hours_per_week: hours_per_week,
+            interested: interested,
+            solving_issues: solving_issues,
+            bitcoin_payment: bitcoin_payment,
+            company_connections: company_connections,
+            timestamp: new Date().toISOString()
+        });
+        
+        fetch(scriptURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData.toString()
+        })
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(text) {
+            showMessage(true, messages.success);
+            var form = document.getElementById('studentFeedbackForm');
+            if (form) {
+                form.reset();
+            }
+            var button = document.getElementById('submitFeedback');
+            if (button) {
+                button.disabled = false;
+                button.textContent = originalButtonText;
+            }
+            isSubmitting = false;
+        })
+        .catch(function(error) {
+            showMessage(false, messages.error);
+            var button = document.getElementById('submitFeedback');
+            if (button) {
+                button.disabled = false;
+                button.textContent = originalButtonText;
+            }
+            isSubmitting = false;
+        });
+    }
+    
+    function showMessage(success, message) {
+        var msgDiv = document.getElementById('feedbackSubmitMsg');
+        if (msgDiv) {
+            msgDiv.className = 'text-center';
+            msgDiv.style.color = success ? '#10b981' : '#ef4444';
+            msgDiv.style.backgroundColor = success ? '#d1fae5' : '#fee2e2';
+            msgDiv.style.border = success ? '1px solid #10b981' : '1px solid #ef4444';
+            msgDiv.textContent = message;
+            msgDiv.classList.remove('hidden');
+        }
+    }
+    
+    if (!attachFormHandler()) {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', attachFormHandler);
+        } else {
+            setTimeout(attachFormHandler, 500);
+        }
+    }
+    
+    window.addEventListener('load', function() {
+        setTimeout(attachFormHandler, 1000);
+    });
+})();
+</script>
