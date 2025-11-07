@@ -1,3 +1,11 @@
+{% include i18n.html %}
+{% assign current_lang = current_lang | default: site.default_lang | default: 'en' %}
+{% assign t = t | default: site.data.i18n.en %}
+{% assign lang_prefix = '' %}
+{% if current_lang != 'en' %}
+  {% assign lang_prefix = '/' | append: current_lang %}
+{% endif %}
+
 <!-- Start Footer Area -->
 <footer class="footer1">
     <div class="footer-area">
@@ -7,11 +15,11 @@
                     <div class="footer-content logo-footer">
                         <div class="footer-head">
                             <div class="footer-logo">
-                                <a href="{{'/' | relative_url }}"><img
+                                <a href="{{ lang_prefix | append: '/' | relative_url }}"><img
                                         src="{{'/assets/img/logo/logo-horizontal.png' | relative_url }}" alt="{{site.title}}" style="max-height: 40px"></a>
                             </div>
                             <p>
-                                Creating secure self-custodial Bitcoin products to ensure you can keep what's yours in a world where all you need is sats.
+                                {% if t and t.footer %}{{ t.footer.description }}{% else %}Creating secure self-custodial Bitcoin products to ensure you can keep what's yours in a world where all you need is sats.{% endif %}
                             </p>
                         </div>
                     </div>
@@ -20,10 +28,10 @@
                 <div class="col-md-3 offset-md-5">
                     <div class="footer-content last-content">
                         <div class="footer-head">
-                            <h4>Information</h4>
+                            <h4>{% if t and t.common %}{{ t.common.information }}{% else %}Information{% endif %}</h4>
                             <div class="footer-contacts">
-                                <p>Email: contact@kumuly.dev</p>
-                                <p>Location: Leuven, Belgium</p>
+                                <p>{% if t and t.common %}{{ t.common.email }}{% else %}Email{% endif %}: contact@kumuly.dev</p>
+                                <p>{% if t and t.common %}{{ t.common.location }}{% else %}Location{% endif %}: Leuven, Belgium</p>
                             </div>
                             <div class="footer-icons">
                                 <ul>
@@ -67,27 +75,57 @@
     <div class="footer-area-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="copyright">
-                        <p class="copyright-text m-0">©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script> Kumuly B.V. All rights reserved.
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="copyright text-center text-md-left">
+                        <p class="copyright-text m-0">
+                            {% assign year = 'now' | date: "%Y" %}
+                            {% if t and t.common and t.common.copyright %}
+                              {% assign copyright_text = t.common.copyright %}
+                              {% assign year_placeholder = '{year}' %}
+                              {% assign copyright_text = copyright_text | replace: year_placeholder, year %}
+                              {{ copyright_text }}
+                            {% else %}
+                              © {{ year }} Kumuly B.V. All rights reserved.
+                            {% endif %}
                         </p>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="footer-menu">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="footer-menu text-center text-md-right">
                         <ul>
-                            <li><a href="#">About</a></li><!-- {{'/about' | relative_url }} -->
-                            <li><a href="#">Terms & Condition</a></li>
-                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">{% if t and t.common %}{{ t.common.about }}{% else %}About{% endif %}</a></li>
+                            <li><a href="#">{% if t and t.common %}{{ t.common.terms }}{% else %}Terms & Condition{% endif %}</a></li>
+                            <li><a href="#">{% if t and t.common %}{{ t.common.privacy }}{% else %}Privacy{% endif %}</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <style>
+        /* Center footer menu on medium and small screens */
+        @media (max-width: 991px) {
+            .footer-area-bottom .footer-menu ul {
+                float: none !important;
+                text-align: center !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .footer-area-bottom .copyright {
+                text-align: center !important;
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* Desktop: keep right alignment */
+        @media (min-width: 992px) {
+            .footer-area-bottom .footer-menu ul {
+                float: right;
+            }
+        }
+    </style>
     <!-- End Footer Bottom Area -->
 </footer>
 <!-- End Footer Area -->

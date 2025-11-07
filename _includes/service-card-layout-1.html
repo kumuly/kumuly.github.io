@@ -1,14 +1,36 @@
+{% include i18n.html %}
+{% assign t = t | default: site.data.i18n.en %}
+{% assign service_title = service.title %}
+{% assign service_description = service.description %}
+
+{% comment %} Get translations for service {% endcomment %}
+{% if t and t.services %}
+  {% if service.title == 'Self-Custody' %}
+    {% assign service_title = t.services.self_custody.title %}
+    {% assign service_description = t.services.self_custody.description %}
+  {% elsif service.title == 'Instant Payments' %}
+    {% assign service_title = t.services.instant_payments.title %}
+    {% assign service_description = t.services.instant_payments.description %}
+  {% elsif service.title == 'Free Open Source' %}
+    {% assign service_title = t.services.free_open_source.title %}
+    {% assign service_description = t.services.free_open_source.description %}
+  {% elsif service.title == 'Service Providers' %}
+    {% assign service_title = t.services.service_providers.title %}
+    {% assign service_description = t.services.service_providers.description %}
+  {% endif %}
+{% endif %}
+
 <div class="well-services wow fadeInUp" data-wow-delay="0.3s">
     {% if service.icon %}
     <div class="services-img">
-        <img class="icon-img" src="{{service.icon | relative_url }}" alt="{{service.title}}">
+        <img class="icon-img" src="{{service.icon | relative_url }}" alt="{{service_title}}">
     </div>
     {% endif %}
     <div class="main-wel">
         <div class="wel-content">
-            <h4>{{service.title}}</h4>
+            <h4>{{service_title}}</h4>
             {% if page.home != 3 %}
-                <p>{{service.description}}</p>
+                <p>{{service_description}}</p>
             {% endif %}
         </div>
     </div>

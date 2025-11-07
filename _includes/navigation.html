@@ -1,13 +1,126 @@
+{% include i18n.html %}
+{% assign current_lang = current_lang | default: site.default_lang | default: 'en' %}
+{% assign t = t | default: site.data.i18n.en %}
+
+{% comment %} Get current page path without language prefix for URL building {% endcomment %}
+{% assign lang_prefix = '' %}
+{% if current_lang != 'en' %}
+  {% assign lang_prefix = '/' | append: current_lang %}
+{% endif %}
+
+{% comment %} Get current page path without language prefix for language switcher {% endcomment %}
+{% assign current_path = page.url %}
+{% if current_path == '/es' or current_path == '/es/' %}
+  {% assign current_path = '/' %}
+{% elsif current_path contains '/es/' %}
+  {% assign current_path = current_path | remove_first: '/es' %}
+{% elsif current_path == '/en' or current_path == '/en/' %}
+  {% assign current_path = '/' %}
+{% elsif current_path contains '/en/' %}
+  {% assign current_path = current_path | remove_first: '/en' %}
+{% endif %}
+{% if current_path == '' %}
+  {% assign current_path = '/' %}
+{% endif %}
+
 <ul class="main-menu">
-    {% for link in site.data.navigation %}
-    <li class="{% if link.submenu %}menu-item-has-children{% endif %}"><a href="{{ link.url|prepend:site.baseurl }}">{{ link.text }}</a>
+    {% assign nav_items = site.data.navigation %}
+    {% for link in nav_items %}
+      {% assign link_text = link.text %}
+      {% comment %} Try to get translation for navigation item {% endcomment %}
+      {% if t and t.nav %}
+        {% if link.text == 'Pocket App' %}
+          {% assign link_text = t.nav.pocket_app | default: link.text %}
+        {% elsif link.text == 'News' %}
+          {% assign link_text = t.nav.news | default: link.text %}
+        {% elsif link.text == 'Merch' %}
+          {% assign link_text = t.nav.merch | default: link.text %}
+        {% elsif link.text == 'Bounties' %}
+          {% assign link_text = t.nav.bounties | default: link.text %}
+        {% elsif link.text == 'About Kumuly' %}
+          {% assign link_text = t.nav.about_kumuly | default: link.text %}
+        {% elsif link.text == 'Reach out' %}
+          {% assign link_text = t.nav.reach_out | default: link.text %}
+        {% endif %}
+      {% endif %}
+      
+      {% assign link_url = link.url %}
+      {% comment %} Handle different URL types {% endcomment %}
+      {% if link.url == '#' or link.url == '/#' %}
+        {% comment %} For anchor links, go to homepage with language prefix {% endcomment %}
+        {% if current_lang != 'en' %}
+          {% assign link_url = lang_prefix | append: '/' %}
+        {% else %}
+          {% assign link_url = '/' %}
+        {% endif %}
+      {% elsif link.url != '#' and link.url != '/#' %}
+        {% comment %} For page links, add language prefix {% endcomment %}
+        {% assign link_url = lang_prefix | append: link.url %}
+      {% endif %}
+      
+      <li class="{% if link.submenu %}menu-item-has-children{% endif %}">
+        <a href="{{ link_url | relative_url }}">{{ link_text }}</a>
         {% if link.submenu %}
             <ul class="submenu">
                 {% for sublink in link.submenu %}
-                <li><a href="{{ sublink.url|prepend:site.baseurl }}">{{ sublink.text }}</a></li>
+                  {% assign sublink_url = sublink.url %}
+                  {% comment %} Handle different URL types for submenu {% endcomment %}
+                  {% if sublink.url == '#' or sublink.url == '/#' %}
+                    {% if current_lang != 'en' %}
+                      {% assign sublink_url = lang_prefix | append: '/' %}
+                    {% else %}
+                      {% assign sublink_url = '/' %}
+                    {% endif %}
+                  {% elsif sublink.url != '#' and sublink.url != '/#' %}
+                    {% assign sublink_url = lang_prefix | append: sublink.url %}
+                  {% endif %}
+                  <li><a href="{{ sublink_url | relative_url }}">{{ sublink.text }}</a></li>
                 {% endfor %}
             </ul>
         {% endif %}
     </li>
     {% endfor %}
+    
+    {% comment %} Add language switcher to mobile menu {% endcomment %}
+    <li class="menu-item-has-children lang-menu-item">
+      <a href="#">
+        {% if current_lang == 'en' %}
+          🇬🇧 EN
+        {% else %}
+          🇪🇸 ES
+        {% endif %}
+      </a>
+      <ul class="submenu">
+        {% if current_lang != 'en' %}
+          <li>
+            {% if current_path == '/' %}
+              <a href="{{ '/' | relative_url }}">🇬🇧 EN</a>
+            {% else %}
+              <a href="{{ current_path | relative_url }}">🇬🇧 EN</a>
+            {% endif %}
+          </li>
+        {% endif %}
+        {% if current_lang != 'es' %}
+          <li>
+            <a href="{{ '/es' | append: current_path | relative_url }}">🇪🇸 ES</a>
+          </li>
+        {% endif %}
+      </ul>
+    </li>
 </ul>
+
+<style>
+  /* Hide language switcher in navigation on desktop - it's shown separately */
+  @media (min-width: 992px) {
+    .main-menu .lang-menu-item {
+      display: none;
+    }
+  }
+  
+  /* Show language switcher in mobile menu */
+  @media (max-width: 991px) {
+    .main-menu .lang-menu-item {
+      display: block;
+    }
+  }
+</style>

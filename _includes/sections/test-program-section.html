@@ -12,21 +12,23 @@
         </div>
         <div class="area-padding-4">
             <div class="text-center logo">
-                <img src="assets/img/logo/kumuly-pocket.png" alt="Kumuly Pocket Logo">
+                <img src="{{'/assets/img/logo/kumuly-pocket.png' | relative_url }}" alt="Kumuly Pocket Logo" style="max-width: 200px; height: auto;">
             </div>
         </div>
+{% include i18n.html %}
+{% assign t = t | default: site.data.i18n.en %}
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 offset-md-3 text-center light-headline">
-                <h2>Interested in testing it out?</h2>
+                <h2>{% if t and t.test_program %}{{ t.test_program.title }}{% else %}Interested in testing it out?{% endif %}</h2>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 offset-md-3 text-center">
-                <p>Follow us on our mission to empower everyday living on Bitcoin, making it accessible, convenient, and integrated into daily life. Stay tuned for updates!</p>
+                <p>{% if t and t.test_program %}{{ t.test_program.text }}{% else %}Follow us on our mission to empower everyday living on Bitcoin, making it accessible, convenient, and integrated into daily life. Stay tuned for updates!{% endif %}</p>
             </div>
         </div>
         <div class="area-padding-5">
             <div class="text-center twitter-logo">
                 <a href="https://x.com/kumulydev" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/img/logo/x.png" alt="X/Twitter link">
+                    <img src="{{'/assets/img/logo/x.png' | relative_url }}" alt="X/Twitter link">
                 </a>
             </div>
         </div>
